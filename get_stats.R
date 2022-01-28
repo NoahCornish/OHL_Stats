@@ -49,8 +49,11 @@ NorthBay_Advanced <- df %>%
          points, goals, assists, points_per_game,
          shots, shooting_percentage, empty_net_goals) %>% 
   rename(`pp/g` = points_per_game)
+#NorthBay_Advanced$name <- gsub("(total)","", as.character(NorthBay_Advanced$name))
 
 
+write.csv(NorthBay_Advanced,
+          file = "NB_Stats_GameDay.csv")
 
 # save file to csv
 write_csv(df2,
